@@ -1,5 +1,5 @@
 {% set name = "allagash" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Allagash-{{ version }}.tar.gz
-  sha256: 7a7e11a8ca1737738e2e2b581c013292016cc82ecfdfdfd345bbadcd66b40da8
+  sha256: 065b9b845180db59c03a72ff6f381361378e30907502c01191474e43116c2648
 
 build:
   number: 0
