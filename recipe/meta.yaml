@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Allagash-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/Allagash-{{ version }}.tar.gz
   sha256: 065b9b845180db59c03a72ff6f381361378e30907502c01191474e43116c2648
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - pandas >=0.23.0
     - pulp >=1.6.1
-    - python >=3.6
+    - python >={{ python_min }}
   run_constrained:
     - geopandas >=0.4.1
     - arcgis >=1.8.2
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/apulverizer/allagash
